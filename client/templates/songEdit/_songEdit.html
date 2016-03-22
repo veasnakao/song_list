@@ -1,0 +1,14 @@
+<template name="_songsEdit">
+  {{#ionModal customTemplate=true}}
+    {{#autoForm collection="Collection.Song" doc=contact id="songs-edit-form" type="update"}}
+      <div class="bar bar-header bar-stable" style="background-color: #387ef5;">
+        <button data-dismiss="modal" type="button" class="button button-clear" style="color: white;">Cancel</button>
+        <h2 class="title" style="color: white;">Edit Contact</h2>
+        <button type="submit" class="button button-positive button-clear" style="color: white;"><span class="ion-checkmark-circled"></span></button>
+      </div>
+      <div class="content has-header overflow-scroll">
+        {{> afQuickFields omitFields="avatarUrl"}}
+      </div>
+    {{/autoForm}}
+  {{/ionModal}}
+</template>

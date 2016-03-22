@@ -1,0 +1,59 @@
+<template name="songsShow">
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton path="songs" text="Back"}}
+    {{/contentFor}}
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Details</h1>
+    {{/contentFor}}
+
+    {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear" data-ion-modal="_songsEdit" data-id="{{contact._id}}"><span
+                class="ion-edit"></span></button>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            {{#with song}}
+                <!--class="padding contact-detail"-->
+                <!--<div class="list card">-->
+                <div class="item item-image">
+                    <img src="{{cover}}" class="full-image">
+                </div>
+
+                <marquee scrollamount="4">
+                    <h4 class="title text-center">{{songTitle}}</h4>
+                </marquee>
+
+                <audio src="{{url}}" type="audio/ogg"></audio>
+
+                <div class="volume-block">
+                    <div class="item range">
+                        <i class="time-start"></i>
+                        <input type="range" name="progressBar" min="0" max="0" value="0" class="progressBar">
+                        <i class="song-duration"></i>
+                    </div>
+                </div>
+
+                <!--<progress id="seekbar" value="0" max="1" style="width:400px;"></progress>-->
+
+                <div class="option-play">
+                    <span class="ion-ios-rewind"></span>
+                    <span class="ion-ios-play change-icon jsPlay"></span>
+                    <!--<span class="ion-ios-pause jsPause"></span>-->
+                    <span class="ion-ios-fastforward"></span>
+                    <!--<span class="ion-ios-fastforward"></span>-->
+                </div>
+
+                <!--<div class="volume-block">-->
+                    <!--<div class="item range">-->
+                        <!--<i class="icon ion-volume-low"></i>-->
+                        <!--<input type="range" name="volume" min="0" max="100" value="{{volume}}" class="volume">-->
+                        <!--<i class="icon ion-volume-high"></i>-->
+                    <!--</div>-->
+                <!--</div>-->
+            {{/with}}
+        {{/ionContent}}
+    {{/ionView}}
+
+</template>
